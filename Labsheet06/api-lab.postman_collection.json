@@ -1,0 +1,167 @@
+{
+  "info": {
+    "_postman_id": "a9c1e34b-8422-4a57-b01f-998811ee7722",
+    "name": "API Lab",
+    "description": "Full REST API Collection for COER University Full Stack Lab Sheet 6 (Node.js + Express.js)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET All Tasks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "tasks"]
+        },
+        "description": "Fetch all tasks. Public endpoint - no x-api-key header required."
+      },
+      "response": []
+    },
+    {
+      "name": "2. GET Single Task by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "tasks", "1"]
+        },
+        "description": "Fetch single task by ID. Public endpoint."
+      },
+      "response": []
+    },
+    {
+      "name": "3. POST Create New Task (Authenticated)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "mysecretkey123"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Complete Lab Sheet 6 REST API Testing\",\n  \"completed\": false\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "tasks"]
+        },
+        "description": "Create a new task. Protected route requiring x-api-key header."
+      },
+      "response": []
+    },
+    {
+      "name": "4. POST Create Task (Unauthorized 401 Test)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"This request should fail with 401\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "tasks"]
+        },
+        "description": "Tests missing x-api-key header. Expected: 401 Unauthorized."
+      },
+      "response": []
+    },
+    {
+      "name": "5. PUT Update Task by ID (Authenticated)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "mysecretkey123"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Updated Task Title\",\n  \"completed\": true\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "tasks", "2"]
+        },
+        "description": "Updates an existing task. Protected route."
+      },
+      "response": []
+    },
+    {
+      "name": "6. DELETE Task by ID (Authenticated)",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "mysecretkey123"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "tasks", "1"]
+        },
+        "description": "Deletes task by ID. Protected route."
+      },
+      "response": []
+    },
+    {
+      "name": "7. DELETE Non-Existent Task (404 Error Test)",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "x-api-key",
+            "value": "mysecretkey123"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/9999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "tasks", "9999"]
+        },
+        "description": "Tests 404 response for deleting non-existent ID 9999."
+      },
+      "response": []
+    }
+  ]
+}

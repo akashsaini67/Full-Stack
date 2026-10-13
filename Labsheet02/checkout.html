@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout with Form Validation - ElectroHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header & Navigation with Live Cart Badge -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        ⚡ Electro<span>Hub</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li>
+            <a href="cart.html">
+              Cart <span class="cart-badge">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title" style="margin-top: 2rem;">Secure Checkout</h1>
+
+    <!-- Order Placement Success Message (Displayed dynamically on valid submit) -->
+    <div id="checkoutSuccess" class="success-card" style="display: none;">
+      <h2>🎉 Order Placed Successfully!</h2>
+      <p id="orderConfirmationMessage">Your order has been recorded. Cart has been cleared from localStorage.</p>
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+        <a href="index.html" class="btn btn-secondary">Return to Home</a>
+      </div>
+    </div>
+
+    <!-- Checkout Main Form Container -->
+    <div id="checkoutContainer" class="checkout-layout">
+      <!-- Interactive Form -->
+      <div class="checkout-box">
+        <h2>Delivery & Contact Details</h2>
+        <form id="checkoutForm" novalidate>
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Akash Sharma">
+            <span id="nameError" class="error-msg"></span>
+          </div>
+
+          <!-- Address -->
+          <div class="form-group">
+            <label for="address">Street Address *</label>
+            <input type="text" id="address" name="address" class="form-control" placeholder="e.g. Flat 402, Civil Lines">
+            <span id="addressError" class="error-msg"></span>
+          </div>
+
+          <!-- City & Pincode -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="city">City *</label>
+              <input type="text" id="city" name="city" class="form-control" placeholder="e.g. Roorkee">
+              <span id="cityError" class="error-msg"></span>
+            </div>
+            <div class="form-group">
+              <label for="pincode">Pincode (6 Digits) *</label>
+              <input type="text" id="pincode" name="pincode" class="form-control" placeholder="e.g. 247667" maxlength="6">
+              <span id="pincodeError" class="error-msg"></span>
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="form-group">
+            <label for="phone">Phone Number (10 Digits) *</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. 9876543210" maxlength="10">
+            <span id="phoneError" class="error-msg"></span>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="form-group">
+            <label>Payment Method</label>
+            <div class="payment-options">
+              <label class="payment-label">
+                <input type="radio" name="paymentMethod" value="card" checked>
+                <span>Credit / Debit Card</span>
+              </label>
+              <label class="payment-label">
+                <input type="radio" name="paymentMethod" value="upi">
+                <span>UPI / Net Banking</span>
+              </label>
+              <label class="payment-label">
+                <input type="radio" name="paymentMethod" value="cod">
+                <span>Cash on Delivery</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" id="placeOrderBtn" class="btn btn-primary btn-block" style="font-size: 1.05rem; padding: 0.9rem;">
+            Place Order Now
+          </button>
+        </form>
+      </div>
+
+      <!-- Order Summary Card -->
+      <aside class="cart-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-row">
+          <span>Items Total:</span>
+          <span id="checkoutTotal">₹0</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping:</span>
+          <span style="color: var(--success-color); font-weight: 600;">FREE</span>
+        </div>
+        <div class="summary-total">
+          <span>Amount Payable:</span>
+          <span id="checkoutGrandTotal" style="color: var(--primary-color);">₹0</span>
+        </div>
+        <div style="margin-top: 1.5rem; background-color: #f1f5f9; padding: 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--text-muted);">
+          🛡️ Form validated with Vanilla JS RegEx. No alerts used.
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>⚡ ElectroHub</h3>
+          <p>Interactive storefront powered by Vanilla JavaScript DOM manipulation & localStorage persistence.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Course Info</h3>
+          <p>COER University, Roorkee</p>
+          <p>Department of CSE</p>
+          <p>Lab Sheet 2 (Phase 3)</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ElectroHub Storefront | Vanilla JavaScript Implementation</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

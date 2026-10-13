@@ -1,0 +1,15 @@
+{
+  "name": "labsheet04-nodejs",
+  "version": "1.0.0",
+  "description": "Full Stack Web Development - Lab Sheet 4 Node.js Solutions",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["nodejs", "coer", "fullstack"],
+  "author": "Akash Saini",
+  "license": "ISC",
+  "dependencies": {
+    "nanoid": "^3.3.8"
+  }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - ElectroHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Common Header & Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        ⚡ Electro<span>Hub</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li>
+            <a href="cart.html" class="active">
+              Cart <span class="cart-badge">2</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Shopping Cart Content -->
+  <main class="container">
+    <h1 class="section-title" style="margin-top: 2rem;">Your Shopping Cart</h1>
+
+    <div class="cart-layout">
+      <!-- Items Table -->
+      <div class="cart-table-wrapper">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Unit Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row 1 -->
+            <tr>
+              <td>
+                <div class="cart-item-info">
+                  <img class="cart-item-img" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100&q=80" alt="Sony WH-1000XM5">
+                  <div>
+                    <strong>Sony WH-1000XM5</strong>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Color: Black</div>
+                  </div>
+                </div>
+              </td>
+              <td>₹26,990</td>
+              <td>
+                <input class="cart-qty-input" type="number" min="1" max="10" value="1">
+              </td>
+              <td>₹26,990</td>
+              <td>
+                <button class="btn btn-danger">Remove</button>
+              </td>
+            </tr>
+
+            <!-- Row 2 -->
+            <tr>
+              <td>
+                <div class="cart-item-info">
+                  <img class="cart-item-img" src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100&q=80" alt="Apple Watch Series 9">
+                  <div>
+                    <strong>Apple Watch Series 9</strong>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Size: 45mm</div>
+                  </div>
+                </div>
+              </td>
+              <td>₹41,900</td>
+              <td>
+                <input class="cart-qty-input" type="number" min="1" max="10" value="1">
+              </td>
+              <td>₹41,900</td>
+              <td>
+                <button class="btn btn-danger">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <a href="products.html" class="btn btn-secondary">&larr; Continue Shopping</a>
+        </div>
+      </div>
+
+      <!-- Order Summary Card -->
+      <aside class="cart-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-row">
+          <span>Items Subtotal:</span>
+          <span>₹68,890</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping Charges:</span>
+          <span style="color: var(--success-color);">FREE</span>
+        </div>
+        <div class="summary-row">
+          <span>Estimated GST (18%):</span>
+          <span>₹12,400</span>
+        </div>
+        <div class="summary-total">
+          <span>Grand Total:</span>
+          <span style="color: var(--primary-color);">₹81,290</span>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <a href="checkout.html" class="btn btn-primary btn-block">Proceed to Checkout &rarr;</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Common Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>⚡ ElectroHub</h3>
+          <p>Your one-stop destination for authentic electronics, cutting-edge gadgets, and smart lifestyle accessories.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="cart.html">View Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Customer Support</h3>
+          <p>Email: support@electrohub.com</p>
+          <p>Phone: +91 98765 43210</p>
+          <p>Roorkee, Uttarakhand, India</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ElectroHub Storefront | Full Stack Development Lab Sheet 1 - COER University</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

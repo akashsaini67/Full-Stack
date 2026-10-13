@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager - Plain JS API Client (Lab Sheet 6)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Task Manager</h1>
+    <p class="subtitle">Plain JavaScript Client consuming Express REST API (<code>GET /api/tasks</code>)</p>
+
+    <!-- Loading State Container -->
+    <div id="loadingIndicator" class="loading-box" style="display: none;">
+      <div class="spinner"></div>
+      <span>Loading tasks from backend server (http://localhost:5000)...</span>
+    </div>
+
+    <!-- Error State Container -->
+    <div id="errorMessage" class="error-box" style="display: none;">
+      <h3>⚠️ Connection Failure</h3>
+      <p id="errorText">Unable to reach the Express server.</p>
+      <button id="retryBtn" class="btn-retry">Retry Connection</button>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList" class="task-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

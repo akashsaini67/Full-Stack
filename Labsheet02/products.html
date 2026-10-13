@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Catalog (Dynamic) - ElectroHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header & Navigation with Live Cart Badge -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        ⚡ Electro<span>Hub</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li>
+            <a href="cart.html">
+              Cart <span class="cart-badge">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Products Catalog -->
+  <main class="container" style="padding-top: 2rem;">
+    <h1 class="section-title">Products Catalog</h1>
+    <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">
+      Rendered dynamically from JavaScript array using DOM template literals &amp; event listeners.
+    </p>
+
+    <!-- Dynamic Product Cards injected by script.js -->
+    <div id="catalogGrid" class="product-grid"></div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>⚡ ElectroHub</h3>
+          <p>Interactive storefront powered by Vanilla JavaScript DOM manipulation & localStorage persistence.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Course Info</h3>
+          <p>COER University, Roorkee</p>
+          <p>Department of CSE</p>
+          <p>Lab Sheet 2 (Phase 3)</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ElectroHub Storefront | Vanilla JavaScript Implementation</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

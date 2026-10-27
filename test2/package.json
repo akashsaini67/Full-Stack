@@ -1,0 +1,20 @@
+{
+  "name": "coer-backend-class-test2",
+  "version": "1.0.0",
+  "description": "COER University Full Stack Web Development - Class Test Solutions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test:q1": "node q1_event_loop.js",
+    "test:q2": "node app.js",
+    "test:q3": "node q3_middleware.js",
+    "test:q4": "node q4_rest_api.js",
+    "test:q5": "node q5_debugging.js",
+    "test:q7": "node q7_cors_server.js",
+    "test:api": "node test_api.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

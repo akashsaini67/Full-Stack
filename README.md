@@ -14,7 +14,9 @@ d:/Full Stack/
 ├── Labsheet04/    # Lab Sheet 4: Node.js Core Modules, APIs & CLI Utilities [12 Tasks]
 ├── Labsheet05/    # Lab Sheet 5: Express.js Routing, Middleware & Routers (Books, Members, Students)
 ├── Labsheet06/    # Lab Sheet 6: Full Backend Integration (Node.js + Express.js + React)
-└── Labsheet07/    # Lab Sheet 7: Database Management & SQL Queries (college_db)
+├── Labsheet07/    # Lab Sheet 7: Database Management & SQL Queries (college_db)
+├── test1/         # Frontend Practical Test (React JSX: Counter, TodoList, Login, Search, Stopwatch)
+└── test2/         # Full Stack Class Test (Node.js Event Loop, Modules, Express REST API, CORS)
 ```
 
 ---
@@ -64,3 +66,30 @@ d:/Full Stack/
   - `schema.sql`: Full schema creation and seed data for `departments`, `students`, `courses`, and `enrollments`.
   - `solutions.sql`: Complete query solutions for Part A (DDL), Part B (DML), Part C (SELECT), Part D (Aggregates), Part E (Joins), Part F (Subqueries), Part G (Indexes, Views, Transactions), and Part H (Challenges).
   - `run-sql.js`: Live execution engine using Node.js built-in `node:sqlite` rendering ASCII tables for every query.
+
+---
+
+### 8. [test1](file:///D:/Full%20Stack/test1) — Frontend Practical Test (React JSX)
+- **Course:** Full Stack Web Development — Frontend Practical Test
+- **Structure:** Complete Vite + React application with modular components in `src/components/` and interactive dashboard in `App.jsx`.
+- **Questions Covered:**
+  - `Counter.jsx` (Q1): Running count, Increment, Decrement (disabled at 0), Reset.
+  - `TodoList.jsx` (Q2): Add item with validation, entered items list, individual item deletion.
+  - `LoginToggle.jsx` (Q3): Login/Logout conditional toggle with welcome view.
+  - `LiveSearchFilter.jsx` (Q4): Real-time keystroke filtering across $\ge 8$ items with "No results found" empty state.
+  - `Stopwatch.jsx` (Q5): Start, Pause, Reset elapsed seconds timer with accurate `useEffect` interval cleanup.
+
+---
+
+### 9. [test2](file:///D:/Full%20Stack/test2) — Full Stack Class Test (Node.js & Express.js)
+- **Course:** Full Stack Web Development — Class Test
+- **Questions Covered:**
+  - `q1_event_loop.js` (Q1): Node.js Event Loop execution order prediction and justification (synchronous code $\to$ microtasks $\to$ macrotasks/timers).
+  - `calc.js` & `app.js` (Q2): Node.js CommonJS module export and `require()` import.
+  - `q3_middleware.js` (Q3): Express custom `requireAuth` checking `x-api-key: secret123` on `POST /api/books` while `GET /api/books` remains public.
+  - `q4_rest_api.js` (Q4): In-memory REST API with `GET` (200), `POST` (201), `DELETE` (200 / 404).
+  - `q5_debugging.js` (Q5): Identified `undefined.title` crash bug and rewrote safe 404 error response.
+  - `BookList.jsx` (Q6): React component handling loading, error, and success states with `fetch()` and `useEffect`.
+  - `q7_cors_server.js` (Q7): Browser Same-Origin Policy vs Postman explanation and Express `cors` middleware fix.
+  - `server.js` & `test_api.js`: Integrated backend server and automated end-to-end verification script.
+
